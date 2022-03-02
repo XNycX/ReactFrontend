@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -89,6 +89,10 @@ const Home = () => {
     return (
       <div className="designHome">
         {<pre>{JSON.stringify(datosUsuario, null, 2)}</pre>}
+        soy Home
+        <Button destino={"Login"} url={"/login"} />
+        <Button destino={"Profile"} url={"/profile"} />
+        <Button destino={"Register"} url={"/register"} />
         <div className="designFormulario">
           <input
             type="email"
@@ -117,20 +121,11 @@ const Home = () => {
           {msgError2}
         </div>
         <div className="loginDesign espacio" onClick={() => login()}>
-          LOG ME!
+          LOG ME
         </div>
-        <Button destino={"Profile"} url={"/profile"} />
       </div>
     );
   }
 };
-return (
-  <div className="designHome">
-    soy Home
-    <Button destino={"Login"} url={"/login"} />
-    <Button destino={"Profile"} url={"/profile"} />
-    <Button destino={"Register"} url={"/register"} />
-  </div>
-);
 
 export default Home;
