@@ -3,8 +3,6 @@ import Button from '../../Components/Button/Button';
 import './Profile.css';
 
 const Profile = () => {
-
-
     return(
         <div className='designProfile'>
             soy Profile
@@ -14,5 +12,4 @@ const Profile = () => {
         </div>
     )
 };
-
 export default Profile;

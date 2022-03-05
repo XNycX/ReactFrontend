@@ -1,43 +1,27 @@
-.designHome {
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     height: 100vh;
     width: 100vw;
 
-    background-color: lightgray;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: lightseagreen;
 }
+.buttonHome {
+    height: 4em;
+    width: 10em;
 
-.loginDesign {
-    width: 9em;
-    height: 3em;
-
-    color: white;
-
-    transition: 0.3s;
-    background-color: green;
+    background-color: lightcyan;
+    transition: 0.4s;
+    border-radius:1em;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.loginDesign:hover {
-    transition: 0.3s;
-
-    background-color: greenyellow;
-}
-
-.espacio {
-    margin-bottom: 4em;
-}
-
-.designFormulario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.buttonHome:hover{
+    background-color: brown;
+    cursor: pointer;
 }

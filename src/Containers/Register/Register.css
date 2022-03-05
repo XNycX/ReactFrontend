@@ -1,11 +1,73 @@
 .designRegister {
+    background-color: lightgoldenrodyellow;
+
     height: 100vh;
     width: 100vw;
 
-    background-color:chartreuse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.cardRegister {
+
+    height: 40em;
+    width: 50em;
+
+    background-color: lightcoral;
+
+    border-radius: 4em;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.upCardRegister {
+    height: 10em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 2em;
+
+}
+
+.middleCardRegister {
+    height: 20em;
+    align-items: center;
+    justify-content: center;
+    font-size : 1em;
+    color: black;
+}
+.buttonRegister{
+    height: 4em;
+    width: 10em;
+    background-color:aqua;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.buttonRegister:hover{
+    cursor: pointer;
+    font-weight: bolder;
+    transition: 0.2s;
+    transform:scale(.9);  
+}
+.bottomCardRegister {
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+

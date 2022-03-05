@@ -1,18 +1,200 @@
-import React from 'react';
-import Button from '../../Components/Button/Button';
-import './Register.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { checkError } from "../../utiles";
+import "./Register.css";
 
 const Register = () => {
+  let navigate = useNavigate();
+  //Hooks
+  const [dataUser, setDataUser] = useState({
+    name: "",
+    surname: "",
+    age: "",
+    email: "",
+    dni: "",
+    password: "",
+    password2: "",
+    telephone: "",
+    numCuenta: "",
+  });
+  const [msgError, setMsgError] = useState("");
+  //useEffect
+  useEffect(() => {
+    //se ejecuta la primera vez que se ejecuta tan solamente
+  }, []);
+  useEffect(() => {
+    //se ejecuta cada vez que se actualiza CUALQUIER HOOK
+  });
+  // useEffect(()=>{
+  //     //useEffect observable que sólo se ejecutará cuando
+  //     //dataUser mute/cambie
+  // },
+  // [dataUser])
+  //Handler (manejador)
+  const fillData = (e) => {
+    setDataUser({ ...dataUser, [e.target.name]: e.target.value });
+  };
+  //Funciones locales del componente
+  const registerMe = async () => {
+    //Array de distintos campos
+    setMsgError("");
+    let error = "";
+    let arrayFields = Object.entries(dataUser);
+    // //1 comprobación de errores antes de enviar al backend
+    if (dataUser.password !== dataUser.password2) {
+      return setMsgError("Los dos password deben de coincidir");
+      }else {
+      setMsgError("");
+      };
+    for (let elemento of arrayFields) {
+      error = checkError(elemento[0], elemento[1]);
 
-
-    return(
-        <div className='designRegister'>
-            soy Register
-            <Button destino={"Home"} url={"/"}/>
-            <Button destino={"Login"} url={"/login"}/>
-            <Button destino={"Profile"} url={"/profile"}/>
+      if (error !== "ok") {
+        setMsgError(error);
+        return;
+        };
+      };
+    console.log("todo ha ido bien");
+    //2construimos el body
+    let body = {
+      name: dataUser.name,
+      surname: dataUser.surname,
+      age: dataUser.age,
+      email: dataUser.email,
+      dni: dataUser.dni,
+      password: dataUser.password,
+      telephone: parseInt(dataUser.telephone),
+      numCuenta: dataUser.numCuenta,
+    };
+    console.log(body);
+    //3 envio de axios
+    try {
+      let resultado = await axios.post(
+        "https://movie-db-geekshubs.herokuapp.com/usuarios",
+        body
+      );
+      console.log(resultado);
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <div className="designRegister">
+      <div className="cardRegister">
+        <div className="upCardRegister">Formulario de Registro</div>
+        <div className="middleCardRegister">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            title="name"
+            placeholder="Nombre:"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            title="surname"
+            placeholder="Apellido:"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="text"
+            name="age"
+            id="age"
+            title="age"
+            placeholder="Edad:"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            title="email"
+            placeholder="Correo Electrónico:"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="text"
+            name="dni"
+            id="dni"
+            title="dni"
+            placeholder="DNI"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            title="password"
+            placeholder="Contraseña"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="password"
+            name="password2"
+            id="password2"
+            title="password2"
+            placeholder="Repite contraseña"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="text"
+            name="telefono"
+            id="telefono"
+            title="telefono"
+            placeholder="Telefono"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
+          <input
+            type="text"
+            name="numCuenta"
+            id="numCuenta"
+            title="numCuenta"
+            placeholder="NºCuenta"
+            autoComplete="off"
+            onChange={(e) => {
+              fillData(e);
+            }}
+          />
         </div>
-    )
+        <div className="bottomCardRegister">
+          {msgError}
+          <div className="buttonRegister" onClick={() => registerMe()}>
+            Registro
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
-
 export default Register;

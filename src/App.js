@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
@@ -15,7 +15,7 @@ function App() {
     //Aqui funcionará el enrutado de la aplicación.
     <div className="App">
 
-      <BrowserRouter>
+      <Router>
 
         <Header/>
         
@@ -29,7 +29,7 @@ function App() {
         
         <Footer/>
 
-      </BrowserRouter>
+      </Router>
         
       
 

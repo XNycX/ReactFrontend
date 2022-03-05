@@ -1,6 +1,19 @@
-
-.designHeader {
-    height: 20em;
-    background-color:darkkhaki;
-    
+.header{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: rgb(103, 104, 104);
+    color: white;
+}
+.header div span{
+    margin: 1em;
+}
+a{
+    all:unset;
+    cursor:pointer;
+}
+a:hover{
+    font-weight: bolder;
+    transition: 0.2s;
+    transform:scale(.9);  
 }
