@@ -25,5 +25,3 @@ export const checkError = (type,value) => {
             return "ok";      
     }
 };
-
-

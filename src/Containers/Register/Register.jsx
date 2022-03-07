@@ -19,24 +19,12 @@ const Register = () => {
     numCuenta: "",
   });
   const [msgError, setMsgError] = useState("");
-  //useEffect
-  useEffect(() => {
-    //se ejecuta la primera vez que se ejecuta tan solamente
-  }, []);
-  useEffect(() => {
-    //se ejecuta cada vez que se actualiza CUALQUIER HOOK
-  });
-  // useEffect(()=>{
-  //     //useEffect observable que sólo se ejecutará cuando
-  //     //dataUser mute/cambie
-  // },
-  // [dataUser])
-  //Handler (manejador)
   const fillData = (e) => {
     setDataUser({ ...dataUser, [e.target.name]: e.target.value });
   };
+    
   //Funciones locales del componente
-  const registerMe = async () => {
+  const handleSubmit = async () => {
     //Array de distintos campos
     setMsgError("");
     let error = "";
@@ -44,35 +32,22 @@ const Register = () => {
     // //1 comprobación de errores antes de enviar al backend
     if (dataUser.password !== dataUser.password2) {
       return setMsgError("Los dos password deben de coincidir");
-      }else {
+    } else {
       setMsgError("");
-      };
+    }
     for (let elemento of arrayFields) {
       error = checkError(elemento[0], elemento[1]);
 
       if (error !== "ok") {
         setMsgError(error);
         return;
-        };
-      };
-    console.log("todo ha ido bien");
-    //2construimos el body
-    let body = {
-      name: dataUser.name,
-      surname: dataUser.surname,
-      age: dataUser.age,
-      email: dataUser.email,
-      dni: dataUser.dni,
-      password: dataUser.password,
-      telephone: parseInt(dataUser.telephone),
-      numCuenta: dataUser.numCuenta,
-    };
-    console.log(body);
+      }
+    }
     //3 envio de axios
     try {
       let resultado = await axios.post(
         "https://movie-db-geekshubs.herokuapp.com/usuarios",
-        body
+        dataUser
       );
       console.log(resultado);
       setTimeout(() => {
@@ -189,7 +164,7 @@ const Register = () => {
         </div>
         <div className="bottomCardRegister">
           {msgError}
-          <div className="buttonRegister" onClick={() => registerMe()}>
+          <div className="buttonRegister" onClick={() => handleSubmit()}>
             Registro
           </div>
         </div>
