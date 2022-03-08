@@ -2,12 +2,14 @@
     display: flex;
     align-content: center;
     justify-content: space-around;
-    height: 8em;
+    height: 6em;
     background-color: rgb(103, 104, 104);
     color: white; 
+    background-image: url(/src/images/footer.jfif);
 }
 .footer div span{
     margin: 1em;
+    color: white;
 }
 a{
     all:unset;

@@ -46,7 +46,7 @@ const Register = () => {
     //3 envio de axios
     try {
       let resultado = await axios.post(
-        "https://movie-db-geekshubs.herokuapp.com/usuarios",
+        "http://localhost:5500/users/register/email",
         dataUser
       );
       console.log(resultado);
