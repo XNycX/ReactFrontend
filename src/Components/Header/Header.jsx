@@ -22,7 +22,10 @@ const Header = (props) => {
   };
   return (
     <nav className="header">
-      <span>FILMS 2022</span>
+      <span className="logo">
+        <img src="https://www.pngkit.com/png/full/764-7648696_clapperboard-movie-icon-png-hd-clapperboard-movie-icon.png" alt="" />
+        <span>FILMS 2022 </span>
+       </span>
       <div>
         <span>
           <Link to="/">Home</Link>
