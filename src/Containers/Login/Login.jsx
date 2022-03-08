@@ -67,7 +67,7 @@ const Login = () => {
                     {msgError}
                     {msgError2}
                 </div>
-                <div className="loginDesign espacio" onClick={()=>onSubmit()}>LOG ME!</div>
+                <div className="loginButton space" onClick={()=>onSubmit()}>LOG ME!</div>
                 En caso de no estar registrad@, debes registrarte
                 <div className='buttonRegister2' onClick={()=>takeMeRegister()}>
                     HAZ CLIC AQUÍ PARA REGISTRARTE
