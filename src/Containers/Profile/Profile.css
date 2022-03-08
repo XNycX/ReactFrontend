@@ -1,13 +1,77 @@
 .designProfile {
-    height: 100vh;
-    width: 100vw;
-    color: aliceblue;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  padding: 2em;
+  
 }
-div{
-color: black;
+
+
+
+.profileRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+
+.updateBoton {
+  height: 2em;
+  width: 8em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: lightsteelblue;
+  color: hsl(0, 0%, 30%);
+
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+.buttonFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+}
+
+.updateBoton:hover {
+  color: lightsteelblue;
+  background-color: hsl(0, 0%, 30%);
+  border-radius: 0.2em;
+}
+body {
+  background-color: beige;
+}
+.mantine-1jca9s {
+    background-color: rgb(158, 217, 224);
+    -webkit-box-shadow: 3px 4px 10px -1px rgba(255,255,255,0.51); 
+    box-shadow: 3px 4px 10px -1px rgba(255,255,255,0.51);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/792007521116448905/F7A121A3F7A929FFB4DBC3AE241B3B4B6EAAED1D/);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  height: 50vh;
+  margin: 1em;
+  background-color: rgb(23, 69, 194);
+  color: white;
+  padding: 1em;
+  -webkit-box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.51);
+  box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.51);
+  border-radius: 1em;
 }

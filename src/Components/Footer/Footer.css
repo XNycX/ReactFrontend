@@ -7,16 +7,10 @@
     color: white; 
     background-image: url(/src/images/footer.jfif);
 }
-.footer div span{
-    margin: 1em;
-    color: white;
-}
-a{
-    all:unset;
-    cursor:pointer;
-}
-a:hover{
-    font-weight: bolder;
-    transition: 0.2s;
-    transform:scale(.9);  
+
+.footerLetter{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2em;
 }

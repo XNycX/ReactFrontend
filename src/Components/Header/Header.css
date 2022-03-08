@@ -11,11 +11,11 @@
     margin: 1em;
     color: white;
 }
-a{
+a,span{
     all:unset;
     cursor:pointer;
 }
-a:hover{
+a:hover,span:hover{
     font-weight: bolder;
     transition: 0.2s;
     transform:scale(.9);  

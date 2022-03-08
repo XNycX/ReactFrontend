@@ -1,37 +1,51 @@
-import React, {useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
-import './Home.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+import { Group, Avatar, Text, Accordion,Title  } from "@mantine/core";
+
 
 const Home = () => {
-
-  let navigate = useNavigate();
-
-  //Primero comprobamos en el hook si tenemos el token (estamos logeados)
-  const [credentials, setCredentials] = useState(JSON.parse(localStorage.getItem("dataUser")));
-
-  const takeMeLogin = () => {
-    setTimeout(() => {
-      navigate("/login");
-    }, 1500)
+  function AccordionLabel({ label, image, description }) {
+    return (
+      <Group noWrap>
+        <Avatar src={image} radius="xl" size="lg" />
+        <div>
+          <Text>{label}</Text>
+          <Text size="sm" color="dimmed" weight={400}>
+            {description}
+          </Text>
+        </div>
+      </Group>
+    );
   }
+  let navigate = useNavigate();
+  //Primero comprobamos en el hook si tenemos el token (estamos logeados)
+  const [credentials, setCredentials] = useState(
+    JSON.parse(localStorage.getItem("dataUser"))
+  );
 
   if (credentials?.dataUser?.token !== undefined) {
-
-    return (
-      <div>
-        Hola {credentials.dataUser.name}, Bienvenid@ a films2022
-      </div>
-    )
+    return <div>Hola {credentials.dataUser.name}, Bienvenid@ a films2022</div>;
   } else {
     return (
-      <div className='home'>
-        Hola foraster@, debes de logearte primero....
-        <div className='buttonHome' onClick={() => takeMeLogin()}>
-          LOGIN
-        </div>
+      <div className="home">
+        <Title className="title">Bienvenid@ a <Text color="red" inherit component="span">Films 2022</Text> donde ver una pelicula gratis sin publicidad ya no es un milagro</Title>
+        <Accordion initialItem={-1} iconPosition="right">
+          <Accordion.Item
+            label={
+              <AccordionLabel
+                image="https://w7.pngwing.com/pngs/327/703/png-transparent-cinema-film-moveis-logo-film-art-film.png"
+                label="Sobre films 2022"
+                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel alias provident reiciendis illum, magnam nostrum? Qui dignissimos aut quaerat nulla laborum quasi, deserunt iste modi placeat, exercitationem nostrum ad earum?"
+              />
+            }
+          >
+            <Text size="sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel alias provident reiciendis illum, magnam nostrum? Qui dignissimos aut quaerat nulla laborum quasi, deserunt iste modi placeat, exercitationem nostrum ad earum?</Text>
+          </Accordion.Item>
+          {/* ... other items */}
+        </Accordion>
       </div>
-            
-    )
+    );
   }
 };
 export default Home;

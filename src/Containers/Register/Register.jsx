@@ -9,7 +9,7 @@ const Register = () => {
   //Hooks
   const [dataUser, setDataUser] = useState({
     name: "",
-    surname: "",
+    city: "",
     age: "",
     email: "",
     dni: "",
@@ -75,10 +75,10 @@ const Register = () => {
           />
           <input
             type="text"
-            name="surname"
-            id="surname"
-            title="surname"
-            placeholder="Apellido:"
+            name="city"
+            id="city"
+            title="city"
+            placeholder="Ciudad:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -141,21 +141,10 @@ const Register = () => {
           />
           <input
             type="text"
-            name="telefono"
-            id="telefono"
-            title="telefono"
+            name="telephone"
+            id="telephone"
+            title="telephone"
             placeholder="Telefono"
-            autoComplete="off"
-            onChange={(e) => {
-              fillData(e);
-            }}
-          />
-          <input
-            type="text"
-            name="numCuenta"
-            id="numCuenta"
-            title="numCuenta"
-            placeholder="NºCuenta"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);

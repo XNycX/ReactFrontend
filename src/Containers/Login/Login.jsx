@@ -39,9 +39,9 @@ const Login = () => {
             // if(result.data === "Usuario o contraseña inválido"){
             //     setMsgError2("Usuario o contraseña inválido")
             // } else {
-                // setTimeout(()=>{
-                //     navigate("/");
-                // },1500);
+                setTimeout(()=>{
+                    navigate("/");
+                },1500);
             // }
         }catch (error) {
             console.log(error)

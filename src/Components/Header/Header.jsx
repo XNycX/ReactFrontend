@@ -22,20 +22,26 @@ const Header = (props) => {
   };
   return (
     <nav className="header">
-      <span>Header</span>
+      <span>FILMS 2022</span>
       <div>
         <span>
           <Link to="/">Home</Link>
         </span>
+        <span>
+              <Link to="/movies">Movies</Link>
+            </span>
         {props.user ? (
           <>
             <span>
-              <Link to="/profile">{props.user.username}</Link>
+              <Link to="/profile">{props.user.user.name}</Link>
             </span>
-            <span>Logout</span>
+            <span onClick={()=>logOut()}>Logout</span>
+              <span>
+              <Link to="/orders">Orders</Link>
+            </span>
           </>
         ) : (
-          <>
+            <>
             <span>
               <Link to="/login">Login</Link>
             </span>
