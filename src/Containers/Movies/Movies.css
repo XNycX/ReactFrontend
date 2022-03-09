@@ -4,4 +4,15 @@
     background-size: 100%;
     color: white;
     height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.designRooster {
+    display: flex;
+    flex-wrap: wrap;
+}
+.designRooster>*{
+    flex-basis: 25%;
 }
