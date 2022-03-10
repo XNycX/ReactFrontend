@@ -15,7 +15,7 @@ const Movies = (props) => {
     //asíncrono traería problemas y React no lo permite, por ello, llamamos a una funcion
     //que habremos hecho nosotros y se encargará de ello
 
-    getFilms();
+    // getFilms();
   }, []);
 
   //useEffect custom para el hook films
@@ -75,7 +75,7 @@ const Movies = (props) => {
     return (
       <div className="container-movies">
         <div className="marginLoader">
-          <img src={require("../../images/loader.gif")} alt="cargador" />
+          {/* <img src={require("../../images/loader.gif")} alt="cargador" /> */}
         </div>
       </div>
     );

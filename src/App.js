@@ -8,6 +8,7 @@ import Register from './Containers/Register/Register';
 import Profile from './Containers/Profile/Profile';
 import Movies from './Containers/Movies/Movies';
 import Orders from './Containers/Orders/Orders';
+import MovieDetail from './Containers/MovieDetail/MovieDetail';
 
 
 
@@ -26,8 +27,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/moviedetail" element={<MovieDetail/>}/>
           
-         
         </Routes>
         
         <Footer/>

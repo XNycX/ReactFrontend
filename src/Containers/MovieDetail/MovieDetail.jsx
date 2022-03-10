@@ -28,7 +28,7 @@ const MovieDetail = (props) => {
                     <div className="dataFilm">
                         {
                             //EN CASO DE QUE TOKEN SEA TRUE, SI SE INCLUYE EL ELEMENTO RENT
-                            props.credentials.token && <Rent id={props.search.id} token={props.credentials.token} idUser={props.credentials.user.id}/>
+                            props.credentials.token && <Rent id={props.search.id} token={props.credentials.token} idUser={props.credentials.user.user.id}/>
                         }
                     </div>
                 </div>
