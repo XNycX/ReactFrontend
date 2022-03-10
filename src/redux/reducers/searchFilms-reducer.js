@@ -1,7 +1,9 @@
-import {MOVIE_DETAIL} from '../types';
+import { MOVIE_DETAIL,GET_MOVIES } from '../types';
+
 
 const initialState = {
-    film: {}
+    film: {},
+    movies: [],
 };
 
 const searchFilmsReducer = (state = initialState, action) => {
@@ -9,7 +11,11 @@ const searchFilmsReducer = (state = initialState, action) => {
         //GUARDO EN EL ESTADO LOS DATOS DEL USUARIO LOGUEADO
         case MOVIE_DETAIL :
             return action.payload;
-
+        case GET_MOVIES :
+             return {
+                ...state,
+                movies: action.payload
+              };
         default :
             return state
     }

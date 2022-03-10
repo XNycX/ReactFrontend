@@ -35,14 +35,9 @@ const Login = () => {
     const onSubmit = async () => {
         try {
             login(dataUser)
-            // let result = await axios.post("https://movie-db-geekshubs.herokuapp.com/usuarios/login",dataUser);
-            // if(result.data === "Usuario o contraseña inválido"){
-            //     setMsgError2("Usuario o contraseña inválido")
-            // } else {
                 setTimeout(()=>{
                     navigate("/");
                 },1500);
-            // }
         }catch (error) {
             console.log(error)
         };  

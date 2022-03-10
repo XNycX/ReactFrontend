@@ -32,7 +32,6 @@ export const updateUser = async (id, dataUser) => {
     );
     await store.dispatch({ type: MODIFY_CREDENTIALS, payload: res.data });
 
-
     return res;
   } catch (error) {
     console.log(error);
