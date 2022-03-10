@@ -25,17 +25,13 @@ export const updateUser = async (id, dataUser) => {
     let config = {
       headers: { Authorization: credentials.token },
     };
-    // Hacemos el update en la base de datos
-    // get o delete 1º url 2º headers
     let res = await axios.put(
       `http://localhost:5500/users/${id}`,
       dataUser,
       config
     );
     await store.dispatch({ type: MODIFY_CREDENTIALS, payload: res.data });
-    setTimeout(async() => {
-      await store.dispatch({ type: RESET });
-    }, 3000);
+
 
     return res;
   } catch (error) {

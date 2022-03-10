@@ -5,8 +5,10 @@ import { Button, Input, Modal, Notification } from "@mantine/core";
 import { Check } from "tabler-icons-react";
 import "./Profile.css";
 import { updateUser } from "../../redux/actions/user";
+import { useNotifications } from "@mantine/notifications";
 
 const Profile = (props) => {
+  const notifications = useNotifications();
   let navigate = useNavigate();
   //Hooks
   const [dataUser, setDataUser] = useState({
@@ -34,16 +36,13 @@ const Profile = (props) => {
       const updatedUser = await updateUser(props.user.id, dataUser);
       if (updatedUser) {
         setOpened(false);
+        console.log("props", props);
+        notifications.showNotification({
+          message: "Usuario actualizado con éxito",
+          icon: <Check />,
+          autoClose: 2000,
+        });
       }
-      return (
-        <Notification
-          icon={<Check size={18} />}
-          color="teal"
-          title="Teal notification"
-        >
-          This is teal notification with icon
-        </Notification>
-      );
     } catch (error) {
       console.log(error);
     }
@@ -75,10 +74,6 @@ const Profile = (props) => {
           </p>
           <Button onClick={() => setOpened(true)}>Update User</Button>
           <br />
-          {props.message.length > 0 ? <Notification icon={<Check size={18} />} color="teal" >
-          {props.message}
-      </Notification> : ''}
-          
         </div>
       </div>
       <Modal

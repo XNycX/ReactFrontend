@@ -8,10 +8,6 @@ import { connect } from "react-redux";
 const Header = (props) => {
   let navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(props.user);
-  });
-
   const logOut = () => {
     //Borrar de RDX las credenciales
     props.dispatch({ type: LOGOUT });
