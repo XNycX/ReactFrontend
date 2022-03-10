@@ -1,8 +1,9 @@
-import { LOGIN, LOGOUT, MODIFY_CREDENTIALS } from "../types";
+import { LOGIN, LOGOUT, MODIFY_CREDENTIALS,RESET } from "../types";
 
 const initialState = {
   token: "",
   user: null,
+  message: "",
 };
 
 const dataLoginReducer = (state = initialState, action) => {
@@ -11,7 +12,9 @@ const dataLoginReducer = (state = initialState, action) => {
     case LOGIN:
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.user,
+        token: action.payload.token,
+        message: action.payload.message,
       };
 
     //BORRAMOS DATOS GUARDADOS DE USUARIO LOGUEADO Y DEJAMOS VALORES VACIOS
@@ -19,8 +22,16 @@ const dataLoginReducer = (state = initialState, action) => {
       return initialState;
     //MODIFICAMOS LOS DATOS QUE TENEMOS GUARDADOS EN ESTE ESTADO CON LOS VALORES QUE METAMOS POR INPUT EN Perfil.js
     case MODIFY_CREDENTIALS:
-      return { ...state, user: action.payload };
-
+      return {
+        ...state,
+        user: action.payload.user,
+        message: action.payload.message,
+      };
+      case RESET:
+        return {
+          ...state,
+          message: "",
+        };
     default:
       return state;
   }

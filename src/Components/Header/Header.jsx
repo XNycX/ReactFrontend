@@ -36,7 +36,7 @@ const Header = (props) => {
         {props.user ? (
           <>
             <span>
-              <Link to="/profile">{props.user.user.name}</Link>
+              <Link to="/profile">{props.user.name}</Link>
             </span>
             <span onClick={()=>logOut()}>Logout</span>
               <span>

@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { MODIFY_CREDENTIALS } from "../../redux/types";
-import axios from "axios";
-import { Button, Input, Modal } from "@mantine/core";
+import { Button, Input, Modal, Notification } from "@mantine/core";
+import { Check } from "tabler-icons-react";
 import "./Profile.css";
+import { updateUser } from "../../redux/actions/user";
 
 const Profile = (props) => {
   let navigate = useNavigate();
-
   //Hooks
   const [dataUser, setDataUser] = useState({
-    name: props.user.user.name,
-    surname: props.user.user.surname,
-    city: props.user.user.city,
-    edad: props.user.user.edad,
-    email: props.user.user.email,
-    dni: props.user.user.dni,
-    telephone: props.user.user.telephone,
+    name: props.user.name,
+    surname: props.user.surname,
+    city: props.user.city,
+    email: props.user.email,
+    dni: props.user.dni,
+    telephone: props.user.telephone,
   });
 
   //Handler (manejador)
@@ -31,23 +29,21 @@ const Profile = (props) => {
     }
   });
 
-  const updateUser = async () => {
-    let config = {
-      headers: { Authorization: `${props.user.token}` },
-    };
-
+  const onSubmit = async () => {
     try {
-      // Hacemos el update en la base de datos
-      let res = await axios.put(
-        `http://localhost:5500/users/${props.user.user.id}`,
-        dataUser,
-        config
-      );
-
-      if (res) {
-        //Guardamos en redux
-        props.dispatch({ type: MODIFY_CREDENTIALS, payload: dataUser });
+      const updatedUser = await updateUser(props.user.id, dataUser);
+      if (updatedUser) {
+        setOpened(false);
       }
+      return (
+        <Notification
+          icon={<Check size={18} />}
+          color="teal"
+          title="Teal notification"
+        >
+          This is teal notification with icon
+        </Notification>
+      );
     } catch (error) {
       console.log(error);
     }
@@ -78,6 +74,11 @@ const Profile = (props) => {
             {dataUser.telephone}
           </p>
           <Button onClick={() => setOpened(true)}>Update User</Button>
+          <br />
+          {props.message.length > 0 ? <Notification icon={<Check size={18} />} color="teal" >
+          {props.message}
+      </Notification> : ''}
+          
         </div>
       </div>
       <Modal
@@ -162,7 +163,7 @@ const Profile = (props) => {
                 />
               </div>
               <div className="profileField buttonFlex">
-                <div className="updateBoton" onClick={() => updateUser()}>
+                <div className="updateBoton" onClick={() => onSubmit()}>
                   Actualizar
                 </div>
               </div>
@@ -175,5 +176,9 @@ const Profile = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({ user: state.credentials.user });
+const mapStateToProps = (state) => ({
+  user: state.credentials.user,
+  token: state.credentials.token,
+  message: state.credentials.message,
+});
 export default connect(mapStateToProps)(Profile);
