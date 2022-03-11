@@ -1,45 +1,68 @@
-import React, {useEffect, useState} from 'react';
-import { connect } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import Rent from '../../Components/Rent/Rent';
-import './MovieDetail.css';
-
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { useParams } from "react-router-dom";
+import Rent from "../../Components/Rent/Rent";
+import { getMovieById } from "../../redux/actions/movie";
+import "./MovieDetail.css";
+import {
+  Card,
+  Image,
+  Text,
+  Badge,
+  Button,
+  Group,
+  useMantineTheme,
+} from "@mantine/core";
 
 const MovieDetail = (props) => {
+  const { id } = useParams();
+  const theme = useMantineTheme();
 
-    let navigate = useNavigate();
-    
+  const secondaryColor =
+    theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[7];
+  useEffect(() => {
+    getMovieById(id);
+  }, []);
 
+  return (
+    <div className="card-detail">
+      <Card className="card-style" shadow="sm" p="lg">
+        <Card.Section>
+          <Image src={props.movie.img} height={160} alt="Norway" />
+        </Card.Section>
 
-    useEffect(()=> {
-        //Compruebo si hay datos de la película escogida en redux, en caso de NO
-        //haber datos, redirijo a HOME.
+        <Group
+          position="apart"
+          style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+        >
+          <Text weight={500}>{props.movie.title}</Text>
+          <Badge color="pink" variant="light">
+            Precio: {props.movie.price}€
+          </Badge>
+        </Group>
 
-        if(props.search?.title === undefined){
-            navigate("/");
-        }
-    });
+        <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
+          {props.movie.overview}
+        </Text>
+        {props.user ? (
+          <Button
+            variant="light"
+            color="blue"
+            fullWidth
+            style={{ marginTop: 14 }}
+          >
+            Alquiler
+          </Button>
+        ) : (
+          ""
+        )}
+      </Card>
+    </div>
+  );
+};
 
-        return(
-            <div className='designFilm'>
-                <div className="filmDetailHalf">
-                    <div className="dataFilm">{props.search.title}</div>
-                    <div className="dataFilm">{props.search.overview}</div>
-                    <div className="dataFilm">
-                        {
-                            //EN CASO DE QUE TOKEN SEA TRUE, SI SE INCLUYE EL ELEMENTO RENT
-                            props.credentials.token && <Rent id={props.search.id} token={props.credentials.token} idUser={props.credentials.user.user.id}/>
-                        }
-                    </div>
-                </div>
-                <div className="filmDetailHalf">
-                    <img src={props.search.img} alt={props.search.title}/></div>    
-            </div>
-        )
-   
-}
-
-export default connect((state) => ({
-    credentials: state.credentials,
-    search : state.search
-}))(MovieDetail);
+const mapStateToProps = (state) => ({
+  user: state.credentials.user,
+  movie: state.films.movie,
+});
+export default connect(mapStateToProps)(MovieDetail);

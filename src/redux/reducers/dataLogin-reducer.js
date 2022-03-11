@@ -7,7 +7,6 @@ const initialState = {
 };
 
 const dataLoginReducer = (state = initialState, action) => {
-  console.log('ee',action.payload?.message)
   switch (action.type) {
     //GUARDO EN EL ESTADO LOS DATOS DEL USUARIO LOGUEADO
     case LOGIN:
