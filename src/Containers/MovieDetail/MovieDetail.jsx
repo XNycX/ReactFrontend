@@ -51,7 +51,7 @@ const MovieDetail = (props) => {
             fullWidth
             style={{ marginTop: 14 }}
           >
-            Alquiler
+           Rent
           </Button>
         ) : (
           ""

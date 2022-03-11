@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Card, Image, Text } from "@mantine/core";
-import './Movie.css'
+import "./Movie.css";
 
 const Movie = (props) => {
   const movie = props.movies?.map((movie) => {
@@ -16,10 +16,17 @@ const Movie = (props) => {
         >
           <Card.Section>
             <Link to={"/moviedetail/" + movie.id}>
-              <Image src={!movie.img.includes('pics.filmaffi') ? movie.img : 'https://www.mubis.es/media/users/553/108348/cual-sera-vuestra-primera-pelicula-del-2015-original.jpg'} alt={movie.title} height={160} />
+              <Image
+                src={
+                  !movie.img.includes("pics.filmaffi")
+                    ? movie.img
+                    : "https://www.mubis.es/media/users/553/108348/cual-sera-vuestra-primera-pelicula-del-2015-original.jpg"
+                }
+                alt={movie.title}
+                height={160}
+              />
             </Link>
           </Card.Section>
-
           <Text weight={500} size="lg">
             {movie.title}
           </Text>
