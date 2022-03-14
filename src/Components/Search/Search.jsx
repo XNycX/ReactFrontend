@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMoviesByTitle } from "../../redux/actions/movie";
+import Movie from "../../Components/Movie/Movie"; 
 
 const Search = () => {
     const { title } = useParams();
@@ -9,7 +10,7 @@ const Search = () => {
         getMoviesByTitle(title)
     }, [title])
 
-  return <div>Search</div>;
+  return <div className='designRooster'><Movie></Movie></div>;
 };
 
 export default Search;
