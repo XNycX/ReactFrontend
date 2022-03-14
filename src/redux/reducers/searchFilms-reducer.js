@@ -19,7 +19,7 @@ const searchFilmsReducer = (state = initialState, action) => {
                 ...state,
                 movies: action.payload
             };
-            case GET_MOVIES_BY_TITLE :
+        case GET_MOVIES_BY_TITLE :
                 return {
                    ...state,
                    movies: action.payload
