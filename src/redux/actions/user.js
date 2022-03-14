@@ -26,7 +26,7 @@ export const updateUser = async (id, dataUser) => {
       headers: { Authorization: credentials.token },
     };
     let res = await axios.put(
-      `http://localhost:5500/users/${id}`,
+      ` ${API_URL}+/users/${id}`,
       dataUser,
       config
     );

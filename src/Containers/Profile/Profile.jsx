@@ -33,10 +33,9 @@ const Profile = (props) => {
 
   const onSubmit = async () => {
     try {
-      const updatedUser = await updateUser(props.user.id, dataUser);
-      if (updatedUser) {
+      const res = await updateUser(props.user.id, dataUser);
+      if (res) {
         setOpened(false);
-        console.log("props", props);
         notifications.showNotification({
           message: "Usuario actualizado con éxito",
           icon: <Check />,
