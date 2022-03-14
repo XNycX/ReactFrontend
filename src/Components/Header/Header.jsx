@@ -4,13 +4,20 @@ import "./Header.css";
 import { LOGOUT } from "../../redux/types";
 import { connect } from "react-redux";
 import { Input } from '@mantine/core';
+import { useState } from "react";
 
 const Header = (props) => {
   let navigate = useNavigate();
+  const [text, setText] = useState("");
+  const handleChange = (e) => {
+    setText(e.target.value);
+    if (e.key === "Enter") {
+      navigate('/search/'+ text)
+    }
+  };
 
   const logOut = () => {
     props.dispatch({ type: LOGOUT });
-
     setTimeout(() => {
       navigate("/");
     }, 1500);
@@ -21,7 +28,7 @@ const Header = (props) => {
         <img src="https://www.pngkit.com/png/full/764-7648696_clapperboard-movie-icon-png-hd-clapperboard-movie-icon.png" alt="" />
         <span>FILMS 2022 </span>
       </span>
-      <Input variant="default" placeholder="Search movie" styles={{ input: { width: '500px' } }}/>
+      <Input onKeyUp={handleChange} variant="default" placeholder="Search movie" styles={{ input: { width: '500px' } }}/>
       <div>
         <span>
           <Link to="/">Home</Link>

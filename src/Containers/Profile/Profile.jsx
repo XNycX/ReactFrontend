@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button, Input, Modal, Notification } from "@mantine/core";
+import {
+  Button,
+  Input,
+  Modal,
+  Card,
+  Text,
+} from "@mantine/core";
 import { Check } from "tabler-icons-react";
 import "./Profile.css";
-import { updateUser } from "../../redux/actions/user";
+import { updateUser, getUserInfo } from "../../redux/actions/user";
 import { useNotifications } from "@mantine/notifications";
 
 const Profile = (props) => {
@@ -24,6 +30,10 @@ const Profile = (props) => {
   const fillData = (e) => {
     setDataUser({ ...dataUser, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   useEffect(() => {
     if (props.user.token === "") {
@@ -72,6 +82,27 @@ const Profile = (props) => {
             {dataUser.telephone}
           </p>
           <Button onClick={() => setOpened(true)}>Update User</Button>
+          <br />
+        </div>
+        <div className="card">
+          <h1>My Rents</h1>
+          {props.user.Orders.map((order) => {
+            return (
+              <Card
+                shadow="sm"
+                component="a"
+              >
+                <Text weight={500} size="lg">
+                  Title: {order.Movie.title}
+                </Text>
+                <Text size="sm">
+                  <p>Price: {order.Movie.price}€</p>
+                  <p>Rent date: {order.date_rent}</p>
+                  <p>Return date: {order.date_return}</p>
+                </Text>
+              </Card>
+            );
+          })}
           <br />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { MOVIE_DETAIL,GET_MOVIES } from '../types';
+import { MOVIE_DETAIL,GET_MOVIES,GET_MOVIES_BY_TITLE } from '../types';
 
 
 const initialState = {
@@ -18,7 +18,12 @@ const searchFilmsReducer = (state = initialState, action) => {
              return {
                 ...state,
                 movies: action.payload
-              };
+            };
+            case GET_MOVIES_BY_TITLE :
+                return {
+                   ...state,
+                   movies: action.payload
+                 };
         default :
             return state
     }

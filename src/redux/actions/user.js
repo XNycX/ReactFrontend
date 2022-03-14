@@ -1,6 +1,6 @@
 import store from "../store";
 import axios from "axios";
-import { LOGIN, MODIFY_CREDENTIALS, RESET } from "../types";
+import { LOGIN, MODIFY_CREDENTIALS, RESET,USER_INFO } from "../types";
 
 const API_URL = "http://localhost:5500";
 
@@ -31,6 +31,26 @@ export const updateUser = async (id, dataUser) => {
       config
     );
     await store.dispatch({ type: MODIFY_CREDENTIALS, payload: res.data });
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getUserInfo = async () => {
+  try {
+    const credentials = JSON.parse(
+      localStorage.getItem("redux_localstorage_simple_credentials")
+    );
+    let config = {
+      headers: { Authorization: credentials.token },
+    };
+    let res = await axios.get(
+      `${API_URL}/users/id`,
+      config
+    );
+    await store.dispatch({ type: USER_INFO, payload: res.data });
 
     return res;
   } catch (error) {
