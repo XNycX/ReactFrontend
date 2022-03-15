@@ -1,8 +1,15 @@
+import "./NotFound.css";
+
 const NotFound = () => {
-    return (
-      <div>404 Page not found</div>
-    )
-  }
-  
-  export default NotFound
-  
+  return (
+    <div>
+      <div class="info404">
+        <a href="http://localhost:3000/" target="" rel="noreferrer noopener">
+          Return Home
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default NotFound;

@@ -12,6 +12,7 @@ import Search from "./Components/Search/Search";
 import Admin from "./Containers/Admin/Admin";
 import PrivateZone from "./Guards/PrivateZone";
 import AdminZone from "./Guards/AdminZone";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/admin" element={ <AdminZone><Admin /></AdminZone>}/>
           <Route path="/moviedetail/:id" element={<MovieDetail />} />
           <Route path="/search/:title" element={<Search />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>

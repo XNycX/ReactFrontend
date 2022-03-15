@@ -1,0 +1,13 @@
+.info404{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding: 0em;
+    margin: 0em;
+    background-color: rgb(103, 104, 104);
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100%;
+    background-image: url(/src/images/404.jpg);
+}
