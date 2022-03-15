@@ -7,8 +7,10 @@ const Orders = (props) => {
       {props.orders.map((order) => {
         return (
           <div className="order">
-            <p>{order.Movie.title}</p>
-            <p>{order.User.name}</p>
+            <p>Title: {order.Movie.title}</p>
+            <p>User: {order.User.name}</p>
+            <p>Rent date: {order.date_rent}</p>
+            <p>Return date: {order.date_return}</p>
           </div>
         );
       })}

@@ -1,4 +1,5 @@
 .admin-container{
     display: flex;
     justify-content: center;
+    flex: auto;
 }

@@ -43,7 +43,7 @@ const Header = (props) => {
             </span>
             <span onClick={()=>logOut()}>Logout</span>
               <span>
-              <Link to="/orders">Orders</Link>
+              <Link to="/admin">Admin</Link>
             </span>
           </>
         ) : (
