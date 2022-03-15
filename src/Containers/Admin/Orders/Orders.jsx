@@ -4,7 +4,7 @@ import {Card,Text,Badge, Group,} from "@mantine/core";
 
 const Orders = (props) => {
   return (
-    <div>
+    <div className="orders">
       {props.orders.map((order) => {
         return (
           <div className="order">

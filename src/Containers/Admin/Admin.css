@@ -1,5 +1,16 @@
 .admin-container{
     display: flex;
     justify-content: center;
-    flex: auto;
+ 
+    
+}
+.orders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+.mantine-1tggmaq {
+    justify-content: center;
 }

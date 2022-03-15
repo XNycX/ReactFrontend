@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { getOrders } from "../../redux/actions/order";
 import { Tabs } from "@mantine/core";
-import { Settings, Movie } from "tabler-icons-react";
+import { Settings, Movie, User } from "tabler-icons-react";
 import Orders from "./Orders/Orders";
 import "./Admin.css";
-import Movies from "./Movies/Movies";
+import Movies from "./AdminMovies/AdminMovies";
 const Admin = () => {
   useEffect(() => {
     getOrders();
@@ -18,6 +18,9 @@ const Admin = () => {
         </Tabs.Tab>
         <Tabs.Tab label="Movies" icon={<Movie size={14} />}>
          <Movies/>
+        </Tabs.Tab>
+        <Tabs.Tab label="Users" icon={<User size={14} />}>
+         Usuarios
         </Tabs.Tab>
       </Tabs>
     </div>
