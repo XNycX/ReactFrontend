@@ -5,7 +5,6 @@
   justify-content: center;
   border-radius: 1em;
   padding: 2em;
-  
 }
 
 
@@ -59,6 +58,7 @@ body {
   background-image: url(/src/images/profile.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-size:cover;
 }
 .card {
   display: flex;
@@ -74,10 +74,6 @@ body {
   -webkit-box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.51);
   box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.51);
   border-radius: 1em;
-}
-.order{
-  background-color: red;
-  margin: 1em;
 }
 .mantine-1mrbul3 {
   width: 20vw;
