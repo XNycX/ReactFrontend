@@ -7,9 +7,9 @@ import Footer from "./Components/Footer/Footer";
 import Register from "./Containers/Register/Register";
 import Profile from "./Containers/Profile/Profile";
 import Movies from "./Containers/Movies/Movies";
-import Orders from "./Containers/Orders/Orders";
 import MovieDetail from "./Containers/MovieDetail/MovieDetail";
 import Search from "./Components/Search/Search";
+import Admin from "./Containers/Admin/Admin";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/moviedetail/:id" element={<MovieDetail />} />
           <Route path="/search/:title" element={<Search />} />
         </Routes>

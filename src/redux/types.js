@@ -7,3 +7,4 @@ export const RESET = 'reset';
 export const GET_MOVIES = 'get_movies';
 export const USER_INFO = 'user_info';
 export const GET_MOVIES_BY_TITLE = 'get_movies_by_title'
+export const GET_ORDERS = 'get_orders'

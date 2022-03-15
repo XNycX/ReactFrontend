@@ -86,7 +86,7 @@ const Profile = (props) => {
         </div>
         <div className="card">
           <h1>My Rents</h1>
-          {props.user.Orders.map((order) => {
+          {props.user.Orders?.map((order) => {
             return (
               <Card
                 shadow="sm"
