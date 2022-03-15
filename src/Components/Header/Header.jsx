@@ -42,9 +42,7 @@ const Header = (props) => {
               <Link to="/profile">{props.user.name}</Link>
             </span>
             <span onClick={()=>logOut()}>Logout</span>
-              <span>
-              <Link to="/admin">Admin</Link>
-            </span>
+           
           </>
         ) : (
             <>
@@ -55,7 +53,9 @@ const Header = (props) => {
               <Link to="/register">Register</Link>
             </span>
           </>
-        )}
+        )
+        }
+        {props.user?.role === 'admin' ? <span><Link to="/admin">Admin</Link></span>:''}   
       </div>
     </nav>
   );

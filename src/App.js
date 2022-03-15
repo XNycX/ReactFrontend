@@ -10,6 +10,8 @@ import Movies from "./Containers/Movies/Movies";
 import MovieDetail from "./Containers/MovieDetail/MovieDetail";
 import Search from "./Components/Search/Search";
 import Admin from "./Containers/Admin/Admin";
+import PrivateZone from "./Guards/PrivateZone";
+import AdminZone from "./Guards/AdminZone";
 
 function App() {
   return (
@@ -21,9 +23,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile"element={<PrivateZone><Profile /></PrivateZone>}/>
           <Route path="/movies" element={<Movies />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={ <AdminZone><Admin /></AdminZone>}/>
           <Route path="/moviedetail/:id" element={<MovieDetail />} />
           <Route path="/search/:title" element={<Search />} />
         </Routes>
