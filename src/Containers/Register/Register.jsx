@@ -16,7 +16,6 @@ const Register = () => {
     password: "",
     password2: "",
     telephone: "",
-    numCuenta: "",
   });
   const [msgError, setMsgError] = useState("");
   const fillData = (e) => {

@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import {
-  Button,
-  Input,
-  Modal,
-  Card,
-  Text,
-} from "@mantine/core";
+import { Button,Input,Modal, Card, Text,} from "@mantine/core";
 import { Check } from "tabler-icons-react";
 import "./Profile.css";
 import { updateUser, getUserInfo } from "../../redux/actions/user";

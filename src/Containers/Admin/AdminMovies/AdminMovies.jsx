@@ -3,7 +3,7 @@ import { getMovies } from "../../../redux/actions/movie";
 import Movie from "../../Movies/Movies";
 import './AdminMovies.css';
 
-const AdminMovies = () => {
+const AdminMovies = (props) => {
   useEffect(() => {
     getMovies();
   }, []);

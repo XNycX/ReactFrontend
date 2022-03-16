@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, MODIFY_CREDENTIALS,RESET,USER_INFO } from "../types";
+import { LOGIN, LOGOUT, MODIFY_CREDENTIALS,RESET,USER_INFO,GET_USERS } from "../types";
 
 const initialState = {
   token: "",
@@ -38,6 +38,11 @@ const dataLoginReducer = (state = initialState, action) => {
         user: action.payload,
 
       };
+      case GET_USERS :
+        return {
+           ...state,
+           user: action.payload
+       };
     default:
       return state;
   }

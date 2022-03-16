@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {Card,Text,Badge, Group,} from "@mantine/core";
+import {Card,Text} from "@mantine/core";
 
 
 const Orders = (props) => {

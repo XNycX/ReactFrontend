@@ -6,16 +6,12 @@
   border-radius: 1em;
   padding: 2em;
 }
-
-
-
 .profileRight {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: space-around;
 }
-
 .updateBoton {
   height: 2em;
   width: 8em;

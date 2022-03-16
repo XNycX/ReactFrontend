@@ -5,9 +5,12 @@ import { Settings, Movie, User } from "tabler-icons-react";
 import Orders from "./Orders/Orders";
 import "./Admin.css";
 import Movies from "./AdminMovies/AdminMovies";
+import Users from "./AdminUsers/AdminUsers";
+import { getUsers } from "../../redux/actions/user";
 const Admin = () => {
   useEffect(() => {
     getOrders();
+    getUsers();
   }, []);
 
   return (
@@ -20,7 +23,7 @@ const Admin = () => {
          <Movies/>
         </Tabs.Tab>
         <Tabs.Tab label="Users" icon={<User size={14} />}>
-         Usuarios
+       <Users/>
         </Tabs.Tab>
       </Tabs>
     </div>
