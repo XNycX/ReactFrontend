@@ -1,5 +1,8 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { checkError } from "../../utiles";
+import "./Register.css";
 import { register } from "../../redux/actions/user";
 
 const Register = () => {
@@ -20,16 +23,30 @@ const Register = () => {
   const fillData = (e) => {
     setDataUser({ ...dataUser, [e.target.name]: e.target.value });
   };
-
+    
   //Funciones locales del componente
   const handleSubmit = async () => {
+    //Array de distintos campos
+    setMsgError("");
+    let error = "";
+    let arrayFields = Object.entries(dataUser);
+    // //1 comprobación de errores antes de enviar al backend
     if (dataUser.password !== dataUser.password2) {
       return setMsgError("Los dos password deben de coincidir");
     } else {
       setMsgError("");
     }
+    for (let elemento of arrayFields) {
+      error = checkError(elemento[0], elemento[1]);
+
+      if (error !== "ok") {
+        setMsgError(error);
+        return;
+      }
+    }
+    //3 envio de axios
     try {
-      register(dataUser);
+        register(dataUser);
       setTimeout(() => {
         navigate("/login");
       }, 1000);
@@ -53,7 +70,7 @@ const Register = () => {
               fillData(e);
             }}
           />
-          <input
+                <input
             type="text"
             name="surname"
             id="surname"
