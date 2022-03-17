@@ -24,6 +24,6 @@ const Users = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    users: state.credentials.user,
+    users: state.credentials.users,
   });
   export default connect(mapStateToProps)(Users);

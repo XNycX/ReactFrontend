@@ -10,7 +10,6 @@ import { getUsers } from "../../redux/actions/user";
 const Admin = () => {
   useEffect(() => {
     getOrders();
-    getUsers();
   }, []);
 
   return (

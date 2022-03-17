@@ -4,6 +4,15 @@ import { LOGIN, MODIFY_CREDENTIALS, RESET,USER_INFO,GET_USERS } from "../types";
 
 const API_URL = "http://localhost:5500";
 
+export const register = async (dataUser) => {
+  try {
+    let res = await axios.post(API_URL + "/users/register",dataUser);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const login = async (user) => {
   try {
     const res = await axios.post(API_URL + "/users/login", user);

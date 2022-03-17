@@ -4,6 +4,7 @@ const initialState = {
   token: "",
   user: null,
   message: "",
+  users:[],
 };
 
 const dataLoginReducer = (state = initialState, action) => {
@@ -41,7 +42,7 @@ const dataLoginReducer = (state = initialState, action) => {
       case GET_USERS :
         return {
            ...state,
-           user: action.payload
+           users: action.payload
        };
     default:
       return state;
