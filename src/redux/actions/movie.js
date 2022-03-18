@@ -46,9 +46,18 @@ export const deleteMovies = async (id) => {
       let config = {
           headers: { Authorization: credentials.token },
       };
-      await axios.delete(API_URL + `/movies/${id}`, config);
-      
+      const res = await axios.delete(API_URL + `/movies/${id}`, config);
+      return res
   } catch (error) {
       console.log(error);
+  }
+};
+
+export const registerMovie = async (dataMovie) => {
+  try {
+    let res = await axios.post(API_URL + "/movies/register",dataMovie);
+    return res;
+  } catch (error) {
+    console.log(error);
   }
 };

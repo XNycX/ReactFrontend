@@ -2,19 +2,17 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Card, Image, Text } from "@mantine/core";
 import "./Movie.css";
-import { deleteMovies } from "../../redux/actions/movie";
+import { deleteMovies, getMovies } from "../../redux/actions/movie";
 
 const Movie = (props) => {
   const movie = props.movies?.map((movie) => {
+    const deleteMovieById = async (id) => {
+      await deleteMovies(id)
+      await getMovies()
+    }
     return (
       <div className="filmCard" key={movie.id}>
-        <Card
-          shadow="sm"
-          p="xl"
-          component="a"
-          href=""
-          target="_blank"
-        >
+        <Card shadow="sm" p="xl" component="a">
           <Card.Section>
             <Link to={"/moviedetail/" + movie.id}>
               <Image
@@ -33,7 +31,16 @@ const Movie = (props) => {
           </Text>
 
           <Text size="sm">{movie.overview}</Text>
-          <div onClick={() => deleteMovies(movie.id)} className="deleteButton">Delete</div>
+          {props.user?.role === "admin" ? (
+            <div
+              onClick={() => deleteMovieById(movie.id)}
+              className="deleteButton"
+            >
+              Delete
+            </div>
+          ) : (
+            ""
+          )}
         </Card>
       </div>
     );
@@ -43,5 +50,6 @@ const Movie = (props) => {
 
 const mapStateToProps = (state) => ({
   movies: state.films.movies,
+  user: state.credentials.user,
 });
 export default connect(mapStateToProps)(Movie);

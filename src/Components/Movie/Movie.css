@@ -5,20 +5,15 @@
   box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
 }
 
-.deleteButton{
-
+.deleteButton {
   width: 6em;
   height: 2em;
-
   color: white;
-
   transition: 0.3s;
   background-color: red;
   margin-top: 1em;
-
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   border-radius: 1em;
-
 }

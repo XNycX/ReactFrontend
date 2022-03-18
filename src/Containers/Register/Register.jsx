@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { checkError } from "../../utiles";
 import "./Register.css";
 import { register } from "../../redux/actions/user";
@@ -36,8 +35,8 @@ const Register = () => {
     } else {
       setMsgError("");
     }
-    for (let elemento of arrayFields) {
-      error = checkError(elemento[0], elemento[1]);
+    for (let element of arrayFields) {
+      error = checkError(element[0], element[1]);
 
       if (error !== "ok") {
         setMsgError(error);
