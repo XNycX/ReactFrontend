@@ -1,7 +1,6 @@
 import store from "../store";
 import axios from "axios";
-import { GET_MOVIES,MOVIE_DETAIL,GET_MOVIES_BY_TITLE } from "../types";
-
+import { GET_MOVIES,MOVIE_DETAIL,GET_MOVIES_BY_TITLE,DELETE_MOVIE } from "../types";
 const API_URL = "http://localhost:5500";
 
 export const getMovies = async () => {
@@ -38,7 +37,7 @@ export const getMoviesByTitle = async(title) => {
 
 };
 
-export const deleteMovies = async (id) => {
+export const deleteMovieById = async (id) => {
   try {
       const credentials = JSON.parse(
           localStorage.getItem("redux_localstorage_simple_credentials")
@@ -46,7 +45,8 @@ export const deleteMovies = async (id) => {
       let config = {
           headers: { Authorization: credentials.token },
       };
-      const res = await axios.delete(API_URL + `/movies/${id}`, config);
+    const res = await axios.delete(API_URL + `/movies/${id}`, config);
+    store.dispatch({ type: DELETE_MOVIE, payload: res.data })
       return res
   } catch (error) {
       console.log(error);

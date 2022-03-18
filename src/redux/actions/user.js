@@ -1,7 +1,6 @@
 import store from "../store";
 import axios from "axios";
-import { LOGIN, MODIFY_CREDENTIALS, RESET,USER_INFO,GET_USERS } from "../types";
-
+import { LOGIN, MODIFY_CREDENTIALS, RESET,USER_INFO,GET_USERS, DELETE_USER } from "../types";
 const API_URL = "http://localhost:5500";
 
 export const register = async (dataUser) => {
@@ -85,7 +84,7 @@ export const getUsers = async () => {
 };
 
 
-export const deleteUsers = async (id) => {
+export const deleteUser = async (id) => {
   try {
       const credentials = JSON.parse(
           localStorage.getItem("redux_localstorage_simple_credentials")
@@ -93,9 +92,12 @@ export const deleteUsers = async (id) => {
       let config = {
           headers: { Authorization: credentials.token },
       };
-      await axios.delete(API_URL + `/users/delete/${id}`, config);
-      
+      const res = await axios.delete(API_URL + `/users/delete/${id}`, config);
+    store.dispatch({ type: DELETE_USER, payload: res.data })
+    return res
   } catch (error) {
-      console.log(error);
+    console.log(error);
+    
   }
+  
 };

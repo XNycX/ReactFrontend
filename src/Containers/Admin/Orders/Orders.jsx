@@ -1,10 +1,27 @@
 import { connect } from "react-redux";
-import {Card,Text} from "@mantine/core";
-import { deleteOrders } from "../../../redux/actions/order";
+import { Card, Text } from "@mantine/core";
+import { useNotifications } from "@mantine/notifications";
+import { deleteOrder } from "../../../redux/actions/order";
+import { Check } from "tabler-icons-react";
 import "./Orders.css";
 
 
 const Orders = (props) => {
+  const notifications = useNotifications();
+  const onSubmit = async (id) => {
+    try {
+      const res = await deleteOrder(id);
+      if (res) {
+        notifications.showNotification({
+          message: "Order successfully deleted",
+          icon: <Check />,
+          autoClose: 2000,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="orders">
       {props.orders.map((order) => {
@@ -19,15 +36,19 @@ const Orders = (props) => {
             <p>Price: {order.Movie.price}€</p>
             <p>Rent date: {order.date_rent}</p>
                 <p>Return date: {order.date_return}</p>
-                <div onClick={() => deleteOrders(order.Movie.id)} className="deleteButton">Delete</div>
+                <div onClick={() => onSubmit(order.Movie.id)} className="deleteButton">Delete</div>
                 </Text>
               </Card>
           </div>
+          
         );
+        
       })}
     </div>
+  
   );
 };
+
 
 
 const mapStateToProps = (state) => ({

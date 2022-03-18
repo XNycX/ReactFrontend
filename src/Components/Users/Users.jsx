@@ -1,8 +1,12 @@
 import { connect } from "react-redux";
 import { Card, Text } from "@mantine/core";
-import { deleteUsers } from "../../redux/actions/user";
+import { deleteUser } from "../../redux/actions/user";
+import { useNotifications } from "@mantine/notifications";
+import { Check } from "tabler-icons-react";
+import './Users.css'
 
 const Users = (props) => {
+  const notifications = useNotifications();
   const user = props.users?.map((user) => {
     return (
       <div className="designUser">
@@ -16,7 +20,7 @@ const Users = (props) => {
               <p>Telephone: {user.telephone}</p>
               <p>Role: {user.role}</p>
               <div
-                onClick={() => deleteUsers(user.id)}
+                onClick={() => deleteUser(user.id)}
                 className="deleteButton"
               >
                 Delete
@@ -28,7 +32,7 @@ const Users = (props) => {
       
     );
   });
-  return <>{user}</>;
+  return <div className="users">{user}</div>;
 };
 
 const mapStateToProps = (state) => ({

@@ -1,6 +1,6 @@
 import store from "../store";
 import axios from "axios";
-import { GET_ORDERS } from "../types";
+import { GET_ORDERS, DELETE_ORDER } from "../types";
 const API_URL = "http://localhost:5500";
 
 export const getOrders = async () => {
@@ -23,7 +23,7 @@ export const getOrders = async () => {
     }
 };
 
-export const deleteOrders = async (id) => {
+export const deleteOrder = async (id) => {
     try {
         const credentials = JSON.parse(
             localStorage.getItem("redux_localstorage_simple_credentials")
@@ -31,8 +31,9 @@ export const deleteOrders = async (id) => {
         let config = {
             headers: { Authorization: credentials.token },
         };
-        await axios.delete(API_URL + `/orders/${id}`, config);
-        
+        const res = await axios.delete(API_URL + `/orders/${id}`, config);
+        store.dispatch({ type: DELETE_ORDER, payload: res.data })
+        return res
     } catch (error) {
         console.log(error);
     }

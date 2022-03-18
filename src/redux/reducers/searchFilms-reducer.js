@@ -1,4 +1,4 @@
-import { MOVIE_DETAIL,GET_MOVIES,GET_MOVIES_BY_TITLE } from '../types';
+import { MOVIE_DETAIL,GET_MOVIES,GET_MOVIES_BY_TITLE,DELETE_MOVIE } from '../types';
 
 
 const initialState = {
@@ -23,6 +23,11 @@ const searchFilmsReducer = (state = initialState, action) => {
                 return {
                    ...state,
                    movies: action.payload
+            };
+        case DELETE_MOVIE:
+                return {
+                   ...state,
+                   movies: state.movies.filter(movie => movie.id !== +action.payload.id)
                  };
         default :
             return state
