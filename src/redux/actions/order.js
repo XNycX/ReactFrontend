@@ -22,3 +22,18 @@ export const getOrders = async () => {
         console.error(error)
     }
 };
+
+export const deleteOrders = async (id) => {
+    try {
+        const credentials = JSON.parse(
+            localStorage.getItem("redux_localstorage_simple_credentials")
+        );
+        let config = {
+            headers: { Authorization: credentials.token },
+        };
+        await axios.delete(API_URL + `/orders/${id}`, config);
+        
+    } catch (error) {
+        console.log(error);
+    }
+};

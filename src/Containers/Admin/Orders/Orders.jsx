@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import {Card,Text} from "@mantine/core";
+import { deleteOrders } from "../../../redux/actions/order";
+import "./Orders.css";
 
 
 const Orders = (props) => {
@@ -16,7 +18,8 @@ const Orders = (props) => {
             <p>User: {order.User.name}</p>
             <p>Price: {order.Movie.price}€</p>
             <p>Rent date: {order.date_rent}</p>
-            <p>Return date: {order.date_return}</p>
+                <p>Return date: {order.date_return}</p>
+                <div onClick={() => deleteOrders(order.Movie.id)} className="deleteButton">Delete</div>
                 </Text>
               </Card>
           </div>

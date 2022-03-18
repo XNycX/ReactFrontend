@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Card, Image, Text } from "@mantine/core";
 import "./Movie.css";
+import { deleteMovies } from "../../redux/actions/movie";
 
 const Movie = (props) => {
   const movie = props.movies?.map((movie) => {
@@ -32,6 +33,7 @@ const Movie = (props) => {
           </Text>
 
           <Text size="sm">{movie.overview}</Text>
+          <div onClick={() => deleteMovies(movie.id)} className="deleteButton">Delete</div>
         </Card>
       </div>
     );

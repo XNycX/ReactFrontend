@@ -83,3 +83,19 @@ export const getUsers = async () => {
     console.log(error);
   }
 };
+
+
+export const deleteUsers = async (id) => {
+  try {
+      const credentials = JSON.parse(
+          localStorage.getItem("redux_localstorage_simple_credentials")
+      );
+      let config = {
+          headers: { Authorization: credentials.token },
+      };
+      await axios.delete(API_URL + `/users/delete/${id}`, config);
+      
+  } catch (error) {
+      console.log(error);
+  }
+};

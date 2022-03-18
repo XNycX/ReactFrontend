@@ -6,7 +6,6 @@ import Orders from "./Orders/Orders";
 import "./Admin.css";
 import Movies from "./AdminMovies/AdminMovies";
 import Users from "./AdminUsers/AdminUsers";
-import { getUsers } from "../../redux/actions/user";
 const Admin = () => {
   useEffect(() => {
     getOrders();

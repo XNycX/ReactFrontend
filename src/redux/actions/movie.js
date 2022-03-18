@@ -30,10 +30,25 @@ export const getMoviesByTitle = async(title) => {
 
   try {
     const res = await axios.get(API_URL + "/movies/title/" + title)
-    await store.dispatch({ type: GET_MOVIES_BY_TITLE, payload: res.data })
+    store.dispatch({ type: GET_MOVIES_BY_TITLE, payload: res.data })
       return res.data
   } catch (error) {
       console.log(error)
   }
 
+};
+
+export const deleteMovies = async (id) => {
+  try {
+      const credentials = JSON.parse(
+          localStorage.getItem("redux_localstorage_simple_credentials")
+      );
+      let config = {
+          headers: { Authorization: credentials.token },
+      };
+      await axios.delete(API_URL + `/movies/${id}`, config);
+      
+  } catch (error) {
+      console.log(error);
+  }
 };

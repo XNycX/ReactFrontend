@@ -8,9 +8,11 @@ const AdminUsers = (props) => {
   }, []);
 
   return (
+    <div className="designUser">
     <div className="designRooster">
       <Users />
-    </div>
+      </div>
+      </div>
   );
 };
 export default AdminUsers;
