@@ -29,7 +29,7 @@ const Home = () => {
   } else {
     return (
       <div className="home">
-        <Title className="title">Bienvenid@ a <Text color="red" inherit component="span">Films 2022</Text> donde ver una pelicula gratis sin publicidad ya no es un milagro</Title>
+        <Title className="title">Bienvenid@ a <Text color="red" inherit component="span">Films 2022</Text> donde ver una pelicula a buen precio sin publicidad ya no es un milagro</Title>
         <Accordion initialItem={-1} iconPosition="right">
           <Accordion.Item
             label={
