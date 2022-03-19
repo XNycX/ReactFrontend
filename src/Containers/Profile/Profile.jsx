@@ -6,9 +6,12 @@ import { Check } from "tabler-icons-react";
 import "./Profile.css";
 import { updateUser, getUserInfo } from "../../redux/actions/user";
 import { useNotifications } from "@mantine/notifications";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Profile = (props) => {
   const notifications = useNotifications();
+  AOS.init();
   let navigate = useNavigate();
   //Hooks
   const [dataUser, setDataUser] = useState({
@@ -54,7 +57,7 @@ const Profile = (props) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container" data-aos="fade-right">
         <div className="card">
           <h1>
             {dataUser.name} {dataUser.surname}
@@ -78,7 +81,7 @@ const Profile = (props) => {
           <Button onClick={() => setOpened(true)}>Update User</Button>
           <br />
         </div>
-        <div className="card">
+        <div className="card" data-aos="fade-left">
           <h1>My Rents</h1>
           {props.user.Orders?.map((order) => {
             return (

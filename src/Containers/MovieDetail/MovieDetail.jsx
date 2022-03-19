@@ -33,7 +33,7 @@ const MovieDetail = (props) => {
     const res = await createRent(body);
     if (res) {
       notifications.showNotification({
-        message: "Pelicula alquilada con éxito",
+        message: "The movie has been successfully rented",
         icon: <Check />,
         autoClose: 2000,
       });
