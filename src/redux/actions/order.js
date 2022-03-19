@@ -1,7 +1,8 @@
 import store from "../store";
 import axios from "axios";
 import { GET_ORDERS, DELETE_ORDER } from "../types";
-const API_URL = process.env.API_URL || "http://localhost:5500";
+const API_URL = process.env.NODE_ENV === 'production' ? 'https://backend-films2022.herokuapp.com': "http://localhost:5500";
+
 
 export const getOrders = async () => {
     try {

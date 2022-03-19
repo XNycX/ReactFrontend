@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = process.env.API_URL || "http://localhost:5500";
+const API_URL = process.env.NODE_ENV === 'production' ? 'https://backend-films2022.herokuapp.com': "http://localhost:5500";
 
 export const createRent = async (body) => {
   try {
