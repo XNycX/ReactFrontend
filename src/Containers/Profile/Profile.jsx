@@ -48,6 +48,7 @@ const Profile = (props) => {
           icon: <Check />,
           autoClose: 2000,
         });
+        getUserInfo()
       }
     } catch (error) {
       console.log(error);
