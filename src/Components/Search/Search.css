@@ -5,5 +5,8 @@
     box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
   }
   .seachContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     min-height: 80vh;
   }
