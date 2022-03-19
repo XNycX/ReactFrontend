@@ -5,8 +5,11 @@ import "./Register.css";
 import { register } from "../../redux/actions/user";
 import { Input } from '@mantine/core';
 import { At } from 'tabler-icons-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Register = () => {
+  AOS.init();
   let navigate = useNavigate();
   //Hooks
   const [dataUser, setDataUser] = useState({
@@ -57,7 +60,7 @@ const Register = () => {
   };
   return (
     <div className="designRegister">
-      <div className="cardRegister">
+      <div className="cardRegister" data-aos="fade-right">
         <div className="upCardRegister">Registration Form</div>
         <div className="middleCardRegister">
           <b>Name:</b><Input

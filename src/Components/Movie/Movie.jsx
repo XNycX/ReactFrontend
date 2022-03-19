@@ -5,8 +5,11 @@ import "./Movie.css";
 import { deleteMovieById } from "../../redux/actions/movie";
 import { useNotifications } from "@mantine/notifications";
 import { Check } from "tabler-icons-react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Movie = (props) => {
+  AOS.init();
   const notifications = useNotifications();
   const onSubmit = async (id) => {
     try {
@@ -24,7 +27,7 @@ const Movie = (props) => {
   }
     const movie = props.movies?.map((movie) => {
       return (
-        <div className="filmCard" key={movie.id}>
+        <div className="filmCard" data-aos="fade-right" key={movie.id}>
           <Card shadow="sm" p="xl" component="a">
             <Card.Section>
               <Link to={"/moviedetail/" + movie.id}>
