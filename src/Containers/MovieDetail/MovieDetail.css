@@ -5,3 +5,9 @@
    align-items: center;
    height: 90vh;
 }
+.card-style{
+   width: 30% !important;
+}
+.card-style img{
+   width: 100%;
+}
