@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import { Group, Avatar, Text, Accordion,Title  } from "@mantine/core";
-
+import { Group, Avatar, Text, Accordion, Title } from "@mantine/core";
 
 const Home = () => {
   function AccordionLabel({ label, image, description }) {
@@ -29,18 +28,27 @@ const Home = () => {
   } else {
     return (
       <div className="home">
-        <Title className="title">Bienvenid@ a <Text color="red" inherit component="span">Films 2022</Text> donde ver una pelicula a buen precio sin publicidad ya no es un milagro</Title>
+        <Title className="title">
+          Welcome to{" "}
+          <Text color="red" inherit component="span">
+            Films 2022
+          </Text>
+          where watching a movie at a good price without advertising is no
+          longer a miracle
+        </Title>
         <Accordion initialItem={-1} iconPosition="right">
           <Accordion.Item
             label={
               <AccordionLabel
                 image="https://w7.pngwing.com/pngs/327/703/png-transparent-cinema-film-moveis-logo-film-art-film.png"
                 label="Sobre films 2022"
-                description="¿Buscas una aplicación para alquilar peliculas rápido y facil? No busques más Films 2022 llega para solucionarte la vida. Las mejores peliculas, sin publicidad y en exclusiva. "
+                description="Are you looking for an application to rent movies quickly and easily? Look no further Films 2022 arrives to solve your life. The best movies, without advertising and exclusively."
               />
             }
           >
-            <Text size="sm">No pierdas más el tiempo y alquila una de tus peliculas favoritas YA</Text>
+            <Text size="sm">
+              Don't waste any more time and rent one of your favorite movies NOW
+            </Text>
           </Accordion.Item>
         </Accordion>
       </div>
