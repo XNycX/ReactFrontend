@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { checkError } from "../../utiles";
 import "./Register.css";
 import { register } from "../../redux/actions/user";
+import { Input } from '@mantine/core';
+import { At } from 'tabler-icons-react';
 
 const Register = () => {
   let navigate = useNavigate();
@@ -58,62 +60,63 @@ const Register = () => {
       <div className="cardRegister">
         <div className="upCardRegister">Registration Form</div>
         <div className="middleCardRegister">
-          <input
+          <b>Name:</b><Input
             type="text"
             name="name"
             id="name"
             title="name"
-            placeholder="Name:"
+            placeholder="Name"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
             }}
           />
-                <input
+                <b>Surname:</b><Input
             type="text"
             name="surname"
             id="surname"
             title="surname"
-            placeholder="Surname:"
+            placeholder="Surname"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
             }}
           />
-          <input
+          <b>City:</b><Input
             type="text"
             name="city"
             id="city"
             title="city"
-            placeholder="City:"
+            placeholder="City"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
             }}
           />
-          <input
+          <b>Age:</b><Input
             type="text"
             name="age"
             id="age"
             title="age"
-            placeholder="Age:"
+            placeholder="Age"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
             }}
           />
-          <input
+          <b>Email:</b><Input
+            icon={<At />}
             type="email"
             name="email"
             id="email"
             title="email"
-            placeholder="Email:"
+            placeholder="Email"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
             }}
           />
-          <input
+          <b>DNI:</b><Input
             type="text"
             name="dni"
             id="dni"
@@ -124,7 +127,7 @@ const Register = () => {
               fillData(e);
             }}
           />
-          <input
+         <b>Password:</b><Input
             type="password"
             name="password"
             id="password"
@@ -135,7 +138,7 @@ const Register = () => {
               fillData(e);
             }}
           />
-          <input
+          <b>Repeat password:</b><Input
             type="password"
             name="password2"
             id="password2"
@@ -146,7 +149,7 @@ const Register = () => {
               fillData(e);
             }}
           />
-          <input
+          <b>Telephone:</b><Input
             type="text"
             name="telephone"
             id="telephone"
@@ -161,7 +164,7 @@ const Register = () => {
         <div className="bottomCardRegister">
           {msgError}
           <div className="buttonRegister" onClick={() => handleSubmit()}>
-            Register
+            <b>Register</b>
           </div>
         </div>
       </div>
