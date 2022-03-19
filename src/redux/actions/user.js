@@ -1,7 +1,7 @@
 import store from "../store";
 import axios from "axios";
 import { LOGIN, MODIFY_CREDENTIALS, RESET,USER_INFO,GET_USERS, DELETE_USER } from "../types";
-const API_URL = "http://localhost:5500";
+const API_URL = process.env.API_URL || "http://localhost:5500";
 
 export const register = async (dataUser) => {
   try {

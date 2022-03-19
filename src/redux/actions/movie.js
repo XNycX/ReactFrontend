@@ -1,7 +1,7 @@
 import store from "../store";
 import axios from "axios";
 import { GET_MOVIES,MOVIE_DETAIL,GET_MOVIES_BY_TITLE,DELETE_MOVIE } from "../types";
-const API_URL = "http://localhost:5500";
+const API_URL = process.env.API_URL || "http://localhost:5500";
 
 export const getMovies = async () => {
     try {

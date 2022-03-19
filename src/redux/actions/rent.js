@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:5500";
+const API_URL = process.env.API_URL || "http://localhost:5500";
 
 export const createRent = async (body) => {
   try {
