@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getUsers } from "../../../redux/actions/user";
 import Users from "../../../Components/Users/Users";
-import './AdminUsers.css';
+import "./AdminUsers.css";
 const AdminUsers = (props) => {
   useEffect(() => {
     getUsers();
@@ -9,10 +9,8 @@ const AdminUsers = (props) => {
 
   return (
     <div className="designUser">
-    <div className="designRooster">
-      <Users />
-      </div>
-      </div>
+        <Users />
+    </div>
   );
 };
 export default AdminUsers;

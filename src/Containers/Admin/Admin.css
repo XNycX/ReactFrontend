@@ -1,14 +1,20 @@
-.admin-container{
-    display: flex;
-    justify-content: center;
+.admin-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 .orders {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 80vh;
 }
 .mantine-1tggmaq {
-    justify-content: center;
+  justify-content: center;
+  background-color: #25262b;
+}
+.mantine-jjhffj {
+  display: block;
+  width: 100%;
 }

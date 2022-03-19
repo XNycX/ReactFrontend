@@ -5,7 +5,6 @@ import { deleteOrder } from "../../../redux/actions/order";
 import { Check } from "tabler-icons-react";
 import "./Orders.css";
 
-
 const Orders = (props) => {
   const notifications = useNotifications();
   const onSubmit = async (id) => {
