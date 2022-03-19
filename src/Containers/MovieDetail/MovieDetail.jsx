@@ -50,7 +50,7 @@ const MovieDetail = (props) => {
     <div className="card-detail">
       <Card className="card-style" shadow="sm" p="lg">
         <Card.Section>
-          <Image src={props.movie.img}  alt="Norway" />
+          <Image src={props.movie.img} height={300} alt="Norway" />
         </Card.Section>
 
         <Group

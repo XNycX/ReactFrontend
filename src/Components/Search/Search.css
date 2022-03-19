@@ -4,4 +4,6 @@
     -webkit-box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
     box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
   }
-  
+  .seachContainer{
+    min-height: 80vh;
+  }
