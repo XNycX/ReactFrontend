@@ -1,6 +1,6 @@
 .filmCard {
     width: 20vw;
-    min-height: 38vh;
+    height: 39vh;
     margin: 1em;
     -webkit-box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
     box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.45);
