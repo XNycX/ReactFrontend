@@ -7,8 +7,10 @@ import { Input } from '@mantine/core';
 import { At,Lock } from 'tabler-icons-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNotifications } from "@mantine/notifications";
 
 const Login = () => {
+    const notifications = useNotifications();
     AOS.init();
     let navigate = useNavigate();
     const [credentials, setCredentials] = useState("");
@@ -29,7 +31,6 @@ const Login = () => {
 
     useEffect(()=>{
         if(credentials?.token !== undefined){
-
             setTimeout(()=>{
                 navigate("/");
             }, 3000);
@@ -39,10 +40,17 @@ const Login = () => {
 
     const onSubmit = async () => {
         try {
-            login(dataUser)
-                setTimeout(()=>{
-                    navigate("/");
-                },1500);
+            const res = await login(dataUser)
+            setTimeout(()=>{
+                navigate("/");
+            },1500);
+            if (res) {
+              notifications.showNotification({
+                message: "Welcome to FILMS 2022",
+                icon: <Check />,
+                autoClose: 2000,
+              });
+            }    
         }catch (error) {
             console.log(error)
         };  

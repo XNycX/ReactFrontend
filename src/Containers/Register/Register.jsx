@@ -7,8 +7,10 @@ import { Input } from '@mantine/core';
 import { At } from 'tabler-icons-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNotifications } from "@mantine/notifications";
 
 const Register = () => {
+  const notifications = useNotifications();
   AOS.init();
   let navigate = useNavigate();
   //Hooks
@@ -50,10 +52,17 @@ const Register = () => {
     }
     //3 envio de axios
     try {
-        register(dataUser);
-      setTimeout(() => {
-        navigate("/login");
-      }, 1000);
+      const res = await register(dataUser);
+      if (res) {
+          notifications.showNotification({
+            message: "You have successfully registered",
+            icon: <Check />,
+            autoClose: 2000,
+          })
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
+      }
     } catch (error) {
       console.log(error);
     }

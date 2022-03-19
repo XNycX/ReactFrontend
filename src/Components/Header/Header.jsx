@@ -5,8 +5,10 @@ import { LOGOUT } from "../../redux/types";
 import { connect } from "react-redux";
 import { Input } from '@mantine/core';
 import { useState } from "react";
+import { useNotifications } from "@mantine/notifications";
 
 const Header = (props) => {
+  const notifications = useNotifications();
   let navigate = useNavigate();
   const [text, setText] = useState("");
   const handleChange = (e) => {
@@ -20,6 +22,11 @@ const Header = (props) => {
     props.dispatch({ type: LOGOUT });
     setTimeout(() => {
       navigate("/");
+        notifications.showNotification({
+          message: "You have successfully logged out",
+          icon: <Check />,
+          autoClose: 2000,
+      })
     }, 1500);
   };
   return (
