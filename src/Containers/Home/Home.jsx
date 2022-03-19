@@ -36,11 +36,10 @@ const Home = () => {
               <AccordionLabel
                 image="https://w7.pngwing.com/pngs/327/703/png-transparent-cinema-film-moveis-logo-film-art-film.png"
                 label="Sobre films 2022"
-                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel alias provident reiciendis illum, magnam nostrum? Qui dignissimos aut quaerat nulla laborum quasi, deserunt iste modi placeat, exercitationem nostrum ad earum?"
               />
             }
           >
-            <Text size="sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel alias provident reiciendis illum, magnam nostrum? Qui dignissimos aut quaerat nulla laborum quasi, deserunt iste modi placeat, exercitationem nostrum ad earum?</Text>
+            <Text size="sm">¿Buscas una aplicación para alquilar peliculas rápido y facil? No busques más Films 2022 llega para solucionarte la vida. Las mejores peliculas, sin publicidad y en exclusiva. No pierdas más el tiempo y alquila una pelicula YA</Text>
           </Accordion.Item>
           {/* ... other items */}
         </Accordion>
