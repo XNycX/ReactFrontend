@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { Input } from '@mantine/core';
 import { useState } from "react";
 import { useNotifications } from "@mantine/notifications";
+import { Check } from "tabler-icons-react";
 
 const Header = (props) => {
   const notifications = useNotifications();

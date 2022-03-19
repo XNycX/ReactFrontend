@@ -8,6 +8,7 @@ import { At } from 'tabler-icons-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useNotifications } from "@mantine/notifications";
+import { Check } from "tabler-icons-react";
 
 const Register = () => {
   const notifications = useNotifications();

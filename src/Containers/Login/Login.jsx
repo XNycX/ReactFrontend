@@ -8,6 +8,7 @@ import { At,Lock } from 'tabler-icons-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useNotifications } from "@mantine/notifications";
+import { Check } from "tabler-icons-react";
 
 const Login = () => {
     const notifications = useNotifications();
