@@ -56,14 +56,14 @@ const Register = () => {
   return (
     <div className="designRegister">
       <div className="cardRegister">
-        <div className="upCardRegister">Formulario de Registro</div>
+        <div className="upCardRegister">Registration Form</div>
         <div className="middleCardRegister">
           <input
             type="text"
             name="name"
             id="name"
             title="name"
-            placeholder="Nombre:"
+            placeholder="Name:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -74,7 +74,7 @@ const Register = () => {
             name="surname"
             id="surname"
             title="surname"
-            placeholder="Apellido:"
+            placeholder="Surname:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -85,7 +85,7 @@ const Register = () => {
             name="city"
             id="city"
             title="city"
-            placeholder="Ciudad:"
+            placeholder="City:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -96,7 +96,7 @@ const Register = () => {
             name="age"
             id="age"
             title="age"
-            placeholder="Edad:"
+            placeholder="Age:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -107,7 +107,7 @@ const Register = () => {
             name="email"
             id="email"
             title="email"
-            placeholder="Correo Electrónico:"
+            placeholder="Email:"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -129,7 +129,7 @@ const Register = () => {
             name="password"
             id="password"
             title="password"
-            placeholder="Contraseña"
+            placeholder="Password"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -140,7 +140,7 @@ const Register = () => {
             name="password2"
             id="password2"
             title="password2"
-            placeholder="Repite contraseña"
+            placeholder="Repeat password"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -151,7 +151,7 @@ const Register = () => {
             name="telephone"
             id="telephone"
             title="telephone"
-            placeholder="Telefono"
+            placeholder="Telephone"
             autoComplete="off"
             onChange={(e) => {
               fillData(e);
@@ -161,7 +161,7 @@ const Register = () => {
         <div className="bottomCardRegister">
           {msgError}
           <div className="buttonRegister" onClick={() => handleSubmit()}>
-            Registro
+            Register
           </div>
         </div>
       </div>

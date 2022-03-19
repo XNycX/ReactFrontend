@@ -7,10 +7,24 @@ import './Users.css'
 
 const Users = (props) => {
   const notifications = useNotifications();
+  const onSubmit = async (id) => {
+    try {
+      const res = await deleteUser(id);
+      if (res) {
+        notifications.showNotification({
+          message: "User successfully deleted",
+          icon: <Check />,
+          autoClose: 2000,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
   const user = props.users?.map((user) => {
     return (
       <div className="designUser">
-        <div className="userCard" key={user}>
+        <div className="userCard" key={user.id}>
           <Card shadow="sm" component="a">
             <Text size="sm">
               <p>User: {user.name}</p>
@@ -20,7 +34,7 @@ const Users = (props) => {
               <p>Telephone: {user.telephone}</p>
               <p>Role: {user.role}</p>
               <div
-                onClick={() => deleteUser(user.id)}
+                onClick={() => onSubmit(user.id)}
                 className="deleteButton"
               >
                 Delete

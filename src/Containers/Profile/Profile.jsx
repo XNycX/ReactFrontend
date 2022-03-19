@@ -41,7 +41,7 @@ const Profile = (props) => {
       if (res) {
         setOpened(false);
         notifications.showNotification({
-          message: "Usuario actualizado con éxito",
+          message: "User updated sucessfully",
           icon: <Check />,
           autoClose: 2000,
         });
@@ -60,7 +60,7 @@ const Profile = (props) => {
             {dataUser.name} {dataUser.surname}
           </h1>
           <p>
-            <b>Ciudad: </b>
+            <b>City: </b>
             {dataUser.city}
           </p>
           <p>
@@ -72,7 +72,7 @@ const Profile = (props) => {
             {dataUser.dni}
           </p>
           <p>
-            <b>Teléfono: </b>
+            <b>Telephone: </b>
             {dataUser.telephone}
           </p>
           <Button onClick={() => setOpened(true)}>Update User</Button>
@@ -110,7 +110,7 @@ const Profile = (props) => {
         <div className="designProfile">
           <div className="designProfileHalf profileLeft">
             <div className="profileField">
-              <b>Nombre: </b>
+              <b>Name: </b>
               <Input
                 variant="filled"
                 type="text"
@@ -123,7 +123,7 @@ const Profile = (props) => {
               />
             </div>
             <div className="profileField">
-              <b>Apellido: </b>
+              <b>Surname: </b>
               <Input
                 type="text"
                 name="surname"
@@ -135,7 +135,7 @@ const Profile = (props) => {
               />
             </div>
             <div className="profileField">
-              <b>Ciudad: </b>
+              <b>City: </b>
               <Input
                 type="text"
                 name="city"
@@ -159,7 +159,7 @@ const Profile = (props) => {
               />
             </div>
             <div className="profileField">
-              <b>Teléfono: </b>
+              <b>Telephone: </b>
               <Input
                 type="text"
                 name="telephone"
@@ -183,7 +183,7 @@ const Profile = (props) => {
               </div>
               <div className="profileField buttonFlex">
                 <div className="updateBoton" onClick={() => onSubmit()}>
-                  Actualizar
+                  Update
                 </div>
               </div>
             </div>
