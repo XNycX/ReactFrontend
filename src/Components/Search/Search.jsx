@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMoviesByTitle } from "../../redux/actions/movie";
 import Movie from "../../Components/Movie/Movie"; 
-import 'Search.css'
+import './Search.css'
 const Search = () => {
     const { title } = useParams();
     useEffect(() => {
