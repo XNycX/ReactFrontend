@@ -31,9 +31,8 @@ const Home = () => {
         <Title className="title">
           Welcome to{" "}
           <Text color="red" inherit component="span">
-            Films 2022
-          </Text>
-          where watching a movie at a good price without advertising is no
+            Films 2022 
+          </Text> where watching a movie at a good price without advertising is no
           longer a miracle
         </Title>
         <Accordion initialItem={-1} iconPosition="right">
