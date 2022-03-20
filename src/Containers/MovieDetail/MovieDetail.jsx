@@ -15,8 +15,10 @@ import {
   Group,
   useMantineTheme,
 } from "@mantine/core";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const MovieDetail = (props) => {
+  AOS.init();
   const { id } = useParams();
   const theme = useMantineTheme();
   const notifications = useNotifications();
@@ -48,7 +50,7 @@ const MovieDetail = (props) => {
 
   return (
     <div className="card-detail">
-      <Card className="card-style" shadow="sm" p="lg">
+      <Card className="card-style" shadow="sm" p="lg" data-aos="fade-right">
         <Card.Section>
           <Image src={props.movie.img} height={300} alt="Norway" />
         </Card.Section>
