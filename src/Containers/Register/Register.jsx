@@ -4,7 +4,7 @@ import { checkError } from "../../utiles";
 import "./Register.css";
 import { register } from "../../redux/actions/user";
 import { Input } from '@mantine/core';
-import { At } from 'tabler-icons-react';
+import { At,Lock, Map, Binary, ListNumbers, TextDirectionLtr, Video } from 'tabler-icons-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useNotifications } from "@mantine/notifications";
@@ -74,6 +74,7 @@ const Register = () => {
         <div className="upCardRegister">Registration Form</div>
         <div className="middleCardRegister">
           <b>Name:</b><Input
+            icon={<TextDirectionLtr />}
             type="text"
             name="name"
             id="name"
@@ -84,7 +85,8 @@ const Register = () => {
               fillData(e);
             }}
           />
-                <b>Surname:</b><Input
+          <b>Surname:</b><Input
+            icon={<TextDirectionLtr />}
             type="text"
             name="surname"
             id="surname"
@@ -96,6 +98,7 @@ const Register = () => {
             }}
           />
           <b>City:</b><Input
+            icon={<Map />}
             type="text"
             name="city"
             id="city"
@@ -107,6 +110,7 @@ const Register = () => {
             }}
           />
           <b>Age:</b><Input
+            icon={<Binary />}
             type="text"
             name="age"
             id="age"
@@ -130,6 +134,7 @@ const Register = () => {
             }}
           />
           <b>DNI:</b><Input
+            icon={<Video />}
             type="text"
             name="dni"
             id="dni"
@@ -140,7 +145,8 @@ const Register = () => {
               fillData(e);
             }}
           />
-         <b>Password:</b><Input
+          <b>Password:</b><Input
+            icon={<Lock />}
             type="password"
             name="password"
             id="password"
@@ -152,6 +158,7 @@ const Register = () => {
             }}
           />
           <b>Repeat password:</b><Input
+            icon={<Lock />}
             type="password"
             name="password2"
             id="password2"
@@ -163,6 +170,7 @@ const Register = () => {
             }}
           />
           <b>Telephone:</b><Input
+            icon={<ListNumbers />}
             type="text"
             name="telephone"
             id="telephone"

@@ -7,6 +7,7 @@ import { Input } from "@mantine/core";
 import { useState } from "react";
 import { useNotifications } from "@mantine/notifications";
 import { Check } from "tabler-icons-react";
+import { VideoPlus,Film } from 'tabler-icons-react';
 
 const Header = (props) => {
   const notifications = useNotifications();
@@ -42,6 +43,7 @@ const Header = (props) => {
         </span>
       </Link>
       <Input
+        icon={<VideoPlus />}
         onKeyUp={handleChange}
         variant="default"
         placeholder="Search movie"

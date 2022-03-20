@@ -10,7 +10,7 @@ const Search = () => {
         getMoviesByTitle(title)
     }, [title])
 
-  return <div className='seachContainer'><Movie></Movie></div>;
+  return <div className='searchContainer'><Movie></Movie></div>;
 };
 
 export default Search;
