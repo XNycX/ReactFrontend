@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./Movies.css";
 import { getMovies } from "../../redux/actions/movie";
 import Movie from "../../Components/Movie/Movie";
-import { Loader } from "@mantine/core";
 import { connect } from "react-redux";
 import loader from '../../images/loader.gif'
 const Movies = (props) => {
