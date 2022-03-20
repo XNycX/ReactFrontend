@@ -42,26 +42,28 @@ Para iniciar nuestro proyecto realizaremos el siguiente comando:
   
 > npm start
 
-😊 Genial ya tenemos todo listo para poder utilizar nuestra app desde la parte de Frontend, para poder incializar el backend debemos ir al siguiente repositorio y seguir las instrucciones: https://github.com/XNycX/BackendAPI 😊
+😊 Genial ya tenemos todo listo para poder utilizar nuestra app desde la parte de Frontend, para poder inicializar el backend debemos ir al siguiente repositorio y seguir las instrucciones: https://github.com/XNycX/BackendAPI 😊
 ## Preview
-
-![foto](/img/)
-
-![foto](/img/)
-
-![foto](/img/)
-
-![foto](/img/)
-
-![foto](/img/)
-
-![foto](/img/)
-
-![foto](/img/)
+### Vista HOME:
+![foto](/src/images/Home.PNG)
+### Vista LOGIN:
+![foto](/src/images/Login.PNG)
+### Vista REGISTER:
+![foto](/src/images/Register.PNG)
+### Vista PROFILE:
+![foto](/src/images/Profile.PNG)
+![foto](/src/images/UpdateProfile.PNG)
+### Vista MOVIES:
+![foto](/src/images/Movies.PNG)
+![foto](/src/images/MovieDetail.PNG)
+### VISTA ADMIN:
+![foto](/src/images/AdminMovies.PNG)
+![foto](/src/images/AdminOrders.PNG)
+![foto](/src/images/AdminUsers.PNG)
   
 ## Funcionalidad de la APP 🛠️
 
-Nuestra APP realizar las siguientes acciones:
+Nuestra APP puede realizar las siguientes acciones:
 
 - Puedes registrarte.
 - Puedes hacer Log In.
