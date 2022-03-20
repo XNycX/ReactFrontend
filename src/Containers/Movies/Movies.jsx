@@ -3,6 +3,7 @@ import "./Movies.css";
 import { getMovies } from "../../redux/actions/movie";
 import Movie from "../../Components/Movie/Movie";
 import { Loader } from "@mantine/core";
+import { connect } from "react-redux";
 
 const Movies = (props) => {
   useEffect(() => {
