@@ -9,7 +9,7 @@ const Movies = (props) => {
   useEffect(() => {
     getMovies();
   }, []);
-  if (props.movies.length < 0) return <Loader />;
+  if (!props.movies) return <Loader />;
   return (
     <div className="designRooster">
       <Movie />
