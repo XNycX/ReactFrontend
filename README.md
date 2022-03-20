@@ -65,9 +65,9 @@ Nuestra APP realizar las siguientes acciones:
 
 - Puedes registrarte.
 - Puedes hacer Log In.
-- Ver las películas, ver el detalle de las películas(sinopsis de la película,precio) y alquilarlas.
+- Ver las películas, ver el detalle de las películas(sinopsis de la película y precio) y alquilarlas.
 - Tenemos una vista perfil donde ver los datos de usuario y modificarlos, y además ver las peliculas que has alquilado y cuando las tendrás que devolver.
-- Si tiens el rol ADMIN, tienes una vista propia donde puedes ver todos los usuarios, pedidos y peliculas de la app y eliminarlos cada uno de ellos respectivamente.
+- Si tienes el rol ADMIN, tienes una vista propia donde puedes ver todos los usuarios, pedidos y peliculas de la app y eliminarlos cada uno de ellos respectivamente.
 - Si intentas acceder a página que no existe te llevará a una vista 404.
 - Si intentas acceder a la vista de perfil sin haber realizado Log In te redireccionará a la vista Log In.
 - Si estas logeado y no tienes el rol de admin e intentas acceder a la vista de ADMIN no te dejará.
