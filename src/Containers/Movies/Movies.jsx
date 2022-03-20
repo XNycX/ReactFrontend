@@ -11,7 +11,7 @@ const Movies = (props) => {
   }, []);
   return (
     <div className="designRooster">
-    {props.movies?.length < 0 ? <img src={loader}  /> : ''} 
+    {props.movies?.length <= 0 ? <img src={loader}  /> : ''} 
       <Movie />
     </div>
   );
