@@ -45,21 +45,21 @@ Para iniciar nuestro proyecto realizaremos el siguiente comando:
 😊 Genial ya tenemos todo listo para poder utilizar nuestra app desde la parte de Frontend, para poder inicializar el backend debemos ir al siguiente repositorio y seguir las instrucciones: https://github.com/XNycX/BackendAPI 😊
 ## Preview
 ### Vista HOME:
-![foto](/src/img/Home.PNG)
+![foto](/src/images/Home.PNG)
 ### Vista LOGIN:
-![foto](/src/img/Login.PNG)
+![foto](/src/images/Login.PNG)
 ### Vista REGISTER:
-![foto](/src/img/Register.PNG)
+![foto](/src/images/Register.PNG)
 ### Vista PROFILE:
-![foto](/src/img/Profile.PNG)
-![foto](/src/img/UpdateProfile.PNG)
+![foto](/src/images/Profile.PNG)
+![foto](/src/images/UpdateProfile.PNG)
 ### Vista MOVIES:
-![foto](/src/img/Movies.PNG)
-![foto](/src/img/MovieDetail.PNG)
+![foto](/src/images/Movies.PNG)
+![foto](/src/images/MovieDetail.PNG)
 ### VISTA ADMIN:
-![foto](/src/img/AdminMovies.PNG)
-![foto](/src/img/AdminOrders.PNG)
-![foto](/src/img/AdminUsers.PNG)
+![foto](/src/images/AdminMovies.PNG)
+![foto](/src/images/AdminOrders.PNG)
+![foto](/src/images/AdminUsers.PNG)
   
 ## Funcionalidad de la APP 🛠️
 
