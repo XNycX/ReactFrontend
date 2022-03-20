@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Frontend Films2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Es el quinto proyecto que realizo en [GeekHubs Academy](https://geekshubsacademy.com/), consiste en la realización de un Frontend, utilizando React como libreria de JS, Redux para manejar el estado, Mantine como framework de CSS, y Axios para hacer las llamadas a mi API.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Pre-requisitos 📋
 
-### `npm start`
+Necesitaremos la instalación de un programa para realizar nuestro código, en este proyecto se ha utilizado [Visual studio code](https://code.visualstudio.com/Download/),
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tecnologías utilizadas 🚀
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El proyecto ha sido desarrollado utilizando los siguientes paquetes:
 
-### `npm test`
+* @mantine/core
+* @mantine/hooks
+* @mantine/notifications
+* Aos
+* Axios
+* React
+* React-dom
+* React-redux
+* React-router-dom
+* React-scripts
+* Redux
+* Redux-localstorage-simple
+* Tabler-icons-react
+* Web-vitals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ¿Como desplegar el proyecto? 📋
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo:
 
-### `npm run build`
+Clonarte el repositorio localmente:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> git clone url del repositorio
+  
+Instalar las depedencias necesarias:
+  
+> npm i
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+Para iniciar nuestro proyecto realizaremos el siguiente comando:
+  
+> npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+😊 Genial ya tenemos todo listo para poder utilizar nuestra app desde la parte de Frontend, para poder incializar el backend debemos ir al siguiente repositorio y seguir las instrucciones: https://github.com/XNycX/BackendAPI 😊
+## Preview
 
-### `npm run eject`
+![foto](/img/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![foto](/img/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![foto](/img/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![foto](/img/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![foto](/img/)
 
-## Learn More
+![foto](/img/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![foto](/img/)
+  
+## Funcionalidad de la APP 🛠️
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Nuestra APP realizar las siguientes acciones:
 
-### Code Splitting
+- Puedes registrarte.
+- Puedes hacer Log In.
+- Ver las películas, ver el detalle de las películas(sinopsis de la película y precio) y alquilarlas.
+- Tenemos una vista perfil donde ver los datos de usuario y modificarlos, y además ver las peliculas que has alquilado y cuando las tendrás que devolver.
+- Si tienes el rol ADMIN, tienes una vista propia donde puedes ver todos los usuarios, pedidos y peliculas de la app y eliminarlos cada uno de ellos respectivamente.
+- Si intentas acceder a página que no existe te llevará a una vista 404.
+- Si intentas acceder a la vista de perfil sin haber realizado Log In te redireccionará a la vista Log In.
+- Si estas logeado y no tienes el rol de admin e intentas acceder a la vista de ADMIN no te dejará.
+- También cuenta con un buscador de películas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* La aplicación ha sido deployada en AWS, utilizando la herramienta Amplify y el backend en Heroku. 
 
-### Analyzing the Bundle Size
+Para poder probar la aplicación utiliza el siguiente enlace:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://main.d35v1bw4rlzu69.amplifyapp.com/
 
-### Making a Progressive Web App
+## Autores ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Cristian Santamaria** - *Realización del proyecto total*
