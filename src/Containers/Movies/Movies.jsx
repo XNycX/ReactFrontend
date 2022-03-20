@@ -2,17 +2,20 @@ import React, { useEffect } from "react";
 import "./Movies.css";
 import { getMovies } from "../../redux/actions/movie";
 import Movie from "../../Components/Movie/Movie";
+import { Loader } from "@mantine/core";
 
-const Movies = () => {
+const Movies = (props) => {
   useEffect(() => {
     getMovies();
   }, []);
-
+  if (props.movies.length < 0) return <Loader />;
   return (
     <div className="designRooster">
       <Movie />
     </div>
   );
 };
-
-export default (Movies);
+const mapStateToProps = (state) => ({
+  movies: state.films.movies,
+});
+export default connect(mapStateToProps)(Movies);
