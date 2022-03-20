@@ -109,7 +109,7 @@ const Profile = (props) => {
         size="calc(60vw - 300px)"
         opened={opened}
         onClose={() => setOpened(false)}
-        title="Aquí puedes modificar tus datos!"
+        title="Here you can modify your data!"
       >
         <div className="designProfile">
           <div className="designProfileHalf profileLeft">
