@@ -81,6 +81,13 @@ Para poder probar la aplicación utiliza el siguiente enlace:
 
 https://main.d35v1bw4rlzu69.amplifyapp.com/
 
+## Organización:
+
+He usado trello como herramienta para organizarme los resultados a conseguir:
+
+https://trello.com/b/lJkHNXP8/videoclub
+
+
 ## Autores ✒️
 
 * **Cristian Santamaria** - *Realización del proyecto total*
